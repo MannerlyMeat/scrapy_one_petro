@@ -50,6 +50,13 @@ COOKIES_ENABLED = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_impersonate.ImpersonateDownloadHandler",
+    "https": "scrapy_impersonate.ImpersonateDownloadHandler",
+
+}
+
 DOWNLOADER_MIDDLEWARES = {
    "onepetro_pdf_downloader.middlewares.OnepetroPdfDownloaderDownloaderMiddleware": 543,
    "onepetro_pdf_downloader.middlewares.CustomHeadersMiddleware": 543,
