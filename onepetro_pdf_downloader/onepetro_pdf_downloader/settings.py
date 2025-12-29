@@ -12,9 +12,10 @@ BOT_NAME = "onepetro_pdf_downloader"
 SPIDER_MODULES = ["onepetro_pdf_downloader.spiders"]
 NEWSPIDER_MODULE = "onepetro_pdf_downloader.spiders"
 
-# HTTPERROR_ALLOWED_CODES  =[403]
+HTTPERROR_ALLOWED_CODES  = [403]
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+USER_AGENT = None
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -57,11 +58,11 @@ DOWNLOAD_HANDLERS = {
 
 }
 
-DOWNLOADER_MIDDLEWARES = {
-   "onepetro_pdf_downloader.middlewares.OnepetroPdfDownloaderDownloaderMiddleware": 543,
-   "onepetro_pdf_downloader.middlewares.CustomHeadersMiddleware": 543,
-    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 550,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    "onepetro_pdf_downloader.middlewares.OnepetroPdfDownloaderDownloaderMiddleware": 543,
+#    "onepetro_pdf_downloader.middlewares.CustomHeadersMiddleware": 543,
+#     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 550,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -102,11 +103,11 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
 
-RETRY_TIMES = 5
-RETRY_HTTP_CODES = [403, 429, 500, 502, 503, 504]
+# RETRY_TIMES = 5
+# RETRY_HTTP_CODES = [403, 429, 500, 502, 503, 504]
 
-COOKIES_DEBUG = False
+# COOKIES_DEBUG = False
 
-HTTPCACHE_ENABLED = True
-HTTPCACHE_EXPIRATION_SECS = 0
-HTTPCACHE_DIR = 'httpcache'
+# HTTPCACHE_ENABLED = True
+# HTTPCACHE_EXPIRATION_SECS = 0
+# HTTPCACHE_DIR = 'httpcache'
